@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création des Objets</title>
+</head>
+<body>
+    <h1>Création des Objets</h1>
+	
+	<p>Bonjour tout le monde voila le premier exercice GIT.</p>
+    <script>
+        var obj_string = new String("Je suis un objet");
+        var obj_cree = new Object();
+
+        obj_cree.prenom = "Anas";
+        obj_cree.nom = "Hmadouche";
+        obj_cree.age = 38;
+
+        alert(obj_cree.prenom);
+
+        // creation d'un objet lateral c'est la meilleure methode recommandée
+        var moi = {
+            prenom : "Anas",
+            nom : "Hmadouche",
+            age : 38,
+
+            id : function(){
+                return this.prenom + ' ' + this.nom;
+            }
+        };
+
+        alert(moi.id());
+
+        // Création des objets a partir du constructeur
+
+        function Identite(p, n, a){
+            this.prenom = p;
+            this.nom = n;
+            this.age = a;
+        }
+
+        var pers1 = new Identite("Anas","Hmadouche",38);
+        var pers2 = new Identite("Meryem", "Idrissi", 28);
+
+        alert("L'age de la personne1 est : " + pers1.age +
+              "\nL'age de la personne2 est : " + pers2.age);
+
+    </script>
+</body>
+</html>
